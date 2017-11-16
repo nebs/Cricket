@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/nebsp'
   s.ios.deployment_target = '8.0'
   s.source_files = 'Cricket/Classes/**/*'
-  s.dependency 'SnapKit', '~> 3.0.0'
+  s.dependency 'SnapKit', '~> 3.1.2'
 end
