@@ -1,0 +1,27 @@
+{
+  "name": "Cricket",
+  "version": "0.1.0",
+  "summary": "A short description of Cricket.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/brigade-jenkins/Cricket",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "brigade-jenkins": "nebspetrovic@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/brigade-jenkins/Cricket.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Cricket/Classes/**/*",
+  "dependencies": {
+    "SnapKit": [
+      "~> 3.0.0"
+    ]
+  }
+}

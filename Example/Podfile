@@ -2,10 +2,9 @@ use_frameworks!
 
 target 'Cricket_Example' do
   pod 'Cricket', :path => '../'
+  pod 'SnapKit', '~> 3.0.0'
 
   target 'Cricket_Tests' do
     inherit! :search_paths
-
-    
   end
 end

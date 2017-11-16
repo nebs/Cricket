@@ -1,42 +1,19 @@
-#
-# Be sure to run `pod lib lint Cricket.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'Cricket'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Cricket.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'Report bugs and feedback from within your app'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Cricket allows you to report bugs or submit feedback directly from within your
+  app. Users can annotate a screenshot of your app and write a message. The
+  message, screenshot and other app meta data are then submitted via email. You
+  can also customize your own handlers if you don't want to use email.
                        DESC
-
-  s.homepage         = 'https://github.com/brigade-jenkins/Cricket'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/nebs/Cricket'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'brigade-jenkins' => 'nebspetrovic@gmail.com' }
-  s.source           = { :git => 'https://github.com/brigade-jenkins/Cricket.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.author           = { 'Nebojsa Petrovic' => 'nebspetrovic@gmail.com' }
+  s.source           = { :git => 'https://github.com/nebs/Cricket.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/nebsp'
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'Cricket/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Cricket' => ['Cricket/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SnapKit', '~> 3.0.0'
 end

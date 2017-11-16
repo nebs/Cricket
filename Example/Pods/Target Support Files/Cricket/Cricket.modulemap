@@ -1,0 +1,6 @@
+framework module Cricket {
+  umbrella header "Cricket-umbrella.h"
+
+  export *
+  module * { export * }
+}

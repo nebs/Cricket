@@ -22,7 +22,7 @@ pod 'Cricket'
 
 ## Author
 
-brigade-jenkins, nebspetrovic@gmail.com
+Nebojsa Petrovic, nebspetrovic@gmail.com
 
 ## License
 
