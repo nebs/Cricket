@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Cricket'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Report bugs and feedback from within your app'
   s.description      = <<-DESC
   Cricket allows you to report bugs or submit feedback directly from within your
