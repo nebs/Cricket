@@ -42,7 +42,7 @@ class CricketViewController: UIViewController {
     let kMessageAnimationInDuration: TimeInterval = 0.3
     let kMessageAnimationInDelay: TimeInterval = 0.4
     let kMessageAnimationOutDuration: TimeInterval = 0.3
-    let kMessageAnimationOutDelay: TimeInterval = 0.1
+    let kMessageAnimationOutDelay: TimeInterval = 2
     let kSpringDamping: CGFloat = 0.5
     let kSpringVelocity: CGFloat = 0.3
 
@@ -120,13 +120,23 @@ class CricketViewController: UIViewController {
     private func animateIntro() {
         infoMessageContainerView.transform = CGAffineTransform(translationX: 0, y: kMessageHeight)
         infoMessageContainerView.isHidden = false
-        let messageAnimationBlock = {
+        let messageInAnimationBlock = {
             self.infoMessageContainerView.transform = CGAffineTransform.identity
+        }
+        let messageOutAnimationBlock = {
+            self.infoMessageContainerView.transform = CGAffineTransform(translationX: 0, y: self.kMessageHeight)
+        }
+        let completionBlock: ((Bool) -> Void) = { _ in
+            UIView.animate(withDuration: self.kMessageAnimationOutDuration,
+                           delay: self.kMessageAnimationOutDelay,
+                           options: .curveEaseInOut,
+                           animations: messageOutAnimationBlock)
         }
         UIView.animate(withDuration: kMessageAnimationInDuration,
                        delay: kMessageAnimationInDelay,
                        options: .curveEaseInOut,
-                       animations: messageAnimationBlock)
+                       animations: messageInAnimationBlock,
+                       completion: completionBlock)
 
         screenshotImageView.alpha = 0
         screenshotImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -145,16 +155,6 @@ class CricketViewController: UIViewController {
     }
 
     private func animateOutro(completion: @escaping (Bool) -> Void) {
-        infoMessageContainerView.transform = CGAffineTransform.identity
-        infoMessageContainerView.isHidden = false
-        let messageAnimationBlock = {
-            self.infoMessageContainerView.transform = CGAffineTransform(translationX: 0, y: self.kMessageHeight)
-        }
-        UIView.animate(withDuration: kMessageAnimationOutDuration,
-                       delay: kMessageAnimationOutDelay,
-                       options: .curveEaseInOut,
-                       animations: messageAnimationBlock)
-
         screenshotImageView.alpha = 1
         self.screenshotImageView.isHidden = false
         let screenshotAnimationBlock = {
