@@ -25,7 +25,6 @@ class CricketScreenshotImageView: UIImageView {
         annotationView.isHidden = true
         isUserInteractionEnabled = true
         layer.masksToBounds = false
-        layer.cornerRadius = 3
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.5
