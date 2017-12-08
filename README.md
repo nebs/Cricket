@@ -32,7 +32,7 @@ override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
 
 ## Handlers
 
-Cricket relies on handlers to actual submit the data. A handler is any class that conforms to the `CricketHandler` protocol. Included in this project is a convenient `CricketEmailHandler` class which will use the built-in email client for sending the feedback.
+Cricket relies on handlers to submit the data. A handler is any class that conforms to the `CricketHandler` protocol. Included in this project is a convenient `CricketEmailHandler` class which will use the built-in email client for sending the feedback.
 
 You can of course build your own handlers, for example if you wanted to report the feedback directly to your server via an API.
 

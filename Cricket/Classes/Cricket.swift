@@ -52,11 +52,15 @@ extension Cricket {
 
 extension Cricket: CricketViewControllerDelegate {
     func didSubmit(cricketViewController: CricketViewController, message: String?, screenshotImage: UIImage?) {
-        baseViewController?.dismiss(animated: true, completion: {
-            self.isShowing = false
-            let report = CricketReport(message: message, screenshotImage: screenshotImage)
-            self.handler?.handle(report: report)
-        })
+        if let baseViewController = baseViewController {
+            baseViewController.dismiss(animated: true, completion: {
+                self.isShowing = false
+                let report = CricketReport(message: message,
+                                           screenshotImage: screenshotImage,
+                                           viewControllerClassName: String(describing: type(of: baseViewController)))
+                self.handler?.handle(report: report)
+            })
+        }
     }
 
     func didCancel(cricketViewController: CricketViewController) {
