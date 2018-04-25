@@ -37,7 +37,7 @@ class MainViewController: ViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 4
         let attrString = NSMutableAttributedString(string: "With Cricket your users can file bug reports and submit feedback directly from within your app! Simply shake your phone to try it out. Cricket will grab a screenshot of the screen and allow you to annotate it.")
-        attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
 
         label.attributedText = attrString
 
@@ -91,7 +91,7 @@ class MainViewController: ViewController {
         }
     }
 
-    func buttonPressed() {
+    @objc func buttonPressed() {
         UIView.animate(withDuration: 0.3) { 
             self.footerContainerView.transform = CGAffineTransform(translationX: 0, y: -self.footerContainerView.bounds.height)
         }
