@@ -20,11 +20,12 @@ public class CricketEmailHandler: NSObject {
             finalSubject += " "
         }
         if let message = report.message, !message.isEmpty {
-            if message.characters.count <= maxCharacterCount {
+            if message.count <= maxCharacterCount {
                 finalSubject += message
             } else {
                 let index = message.index(message.startIndex, offsetBy: maxCharacterCount)
-                finalSubject += message.substring(to: index)
+                finalSubject += message[..<index]
+
             }
         } else {
             finalSubject += defaultSubject
